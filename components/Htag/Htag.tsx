@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
 import styles from './Htag.module.css';
-
-interface IHtag {
-    tag?: 'h1' | 'h2' | 'h3';
-    children: ReactNode;
-}
+import { IHtag } from './Htag.types';
 
 export const Htag = (props: IHtag): JSX.Element => {
     const {children = 'DefaultValue', tag = 'h2'} = props;
