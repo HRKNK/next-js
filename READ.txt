@@ -1,0 +1,6 @@
+
+// Сам NEXT
+// npm i next@latest
+
+// Типы для Node.js (SSR)
+// npm i -D @types/node
