@@ -4,3 +4,13 @@
 
 // Типы для Node.js (SSR)
 // npm i -D @types/node
+
+
+// Типизация HTML элементов. 
+// пример для p:
+// interface I extends DetailedHTMLProps <HTMLAttributes <HTMLParagraphElement>, HTMLParagraphElement>
+// дженерик на месте HTMLAttributes определяет специальные свойства тега.
+
+// Типизация REACT.children
+// import { ReactNode } from "react";
+// children: ReactNode;
