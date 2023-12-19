@@ -3,6 +3,8 @@ import styles from './page.module.css'
 import { Metadata } from 'next/types';
 import { Htag } from '@/components/Htag/Htag';
 import Button from '@/components/Button/Button';
+import Logo from '../public/next.svg';
+import Ptag from '@/components/Ptag/Ptag';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
@@ -21,6 +23,8 @@ export default function Home() {
 			<Htag tag='h1'>Заголовок 2</Htag>
 			<Button appearance='ghost'>Кнопка</Button>
 			<Button appearance='primary'>Кнопка</Button>
+			{/* <Logo/> */}
+			<Ptag size='m'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ad dicta eaque eveniet</Ptag>
 		</div>
 	</main>
   )

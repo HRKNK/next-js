@@ -2,6 +2,7 @@
 // Сам NEXT
 // npm i next@latest
 
+
 // Типы для Node.js (SSR)
 // npm i -D @types/node
 
@@ -11,6 +12,11 @@
 // interface I extends DetailedHTMLProps <HTMLAttributes <HTMLParagraphElement>, HTMLParagraphElement>
 // дженерик на месте HTMLAttributes определяет специальные свойства тега.
 
+
 // Типизация REACT.children
 // import { ReactNode } from "react";
 // children: ReactNode;
+
+
+// SVG плагин для сборщика/вэбпака (импортируем SVG как компонент)
+// npm i --save-dev @svgr/webpack
