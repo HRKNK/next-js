@@ -1,7 +1,7 @@
 import styles from './Htag.module.css';
 import { IHtag } from './Htag.types';
 
-export const Htag = (props: IHtag): JSX.Element => {
+const Htag = (props: IHtag): JSX.Element => {
     const {children = 'DefaultValue', tag = 'h2'} = props;
 
     return (
@@ -12,3 +12,5 @@ export const Htag = (props: IHtag): JSX.Element => {
         </>
     )
 } 
+
+export default Htag;

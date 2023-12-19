@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import { Metadata } from 'next/types';
-import { Htag } from '@/components/Htag/Htag';
+import Htag from '@/components/H-tag/Htag';
 import Button from '@/components/Button/Button';
 import Logo from '../public/next.svg';
-import Ptag from '@/components/Ptag/Ptag';
+import Ptag from '@/components/P-tag/Ptag';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
