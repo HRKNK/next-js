@@ -30,3 +30,7 @@
 .ghost:hover {
     background: #eeeeee;
 }
+.ghost::after {
+    content: url(../../public/arrow.svg);
+    margin-left: 11px;
+}

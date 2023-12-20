@@ -4,7 +4,7 @@ import styles from './Ptag.module.css';
 
 const Ptag = ({size = 'l', children}: IPtag) => {
     return (
-        <p className={classNames({
+        <p className={classNames(styles.p, {
             [styles.large]: size == 'l', 
             [styles.small]: size == 's', 
             [styles.medium]: size == 'm', 

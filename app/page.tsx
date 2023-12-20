@@ -20,7 +20,7 @@ export default function Home() {
   return (
 	<main style={{backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignContent:'center', height: '100vh'}}>
 		<div>
-			<Htag tag='h1'>Заголовок 2</Htag>
+			<Htag tag='h2'>Type title</Htag>
 			<Button appearance='ghost'>Button 1</Button>
 			<Button appearance='primary'>Button 2</Button>
 			{/* <Logo/> */}
