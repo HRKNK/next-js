@@ -2,12 +2,12 @@
 // точка входа в приложение
 
 import type { Metadata } from 'next'
-import { Open_Sans } from 'next/font/google'
+import { Noto_Sans } from 'next/font/google'
 import './globals.css'
 // import Head from 'next/head'
 
-// подключение шрифта (оптимальная загрузка при ssr)
-const open_sans = Open_Sans({ weight: '400', subsets: ['cyrillic'] });
+// подключение шрифта (оптимальная загрузка при ssr) // const noto_sans = Noto_Sans({ weight: '400', subsets: ['cyrillic'] });
+const noto_sans = Noto_Sans({ weight: ['400', '500', '600', '700'], subsets: ['cyrillic'] });
 // подключение:
 // open_sans.className - для классов / open_sans.style - для прямого style
 
@@ -27,7 +27,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
 		<link rel="icon" href="/favicon.ico" />
 	</Head> */}
 	<html lang="en">
-		<body className={open_sans.className}>{children}</body>
+		<body className={noto_sans.className}>{children}</body>
 	</html>
     </>
   )

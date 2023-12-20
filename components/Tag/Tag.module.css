@@ -1,0 +1,42 @@
+.tag {
+    display: inline;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 13px;
+    padding: 5px 8px;
+}
+
+.gray {
+    color: #FFF;
+    background: #B3C0D9;
+}
+
+.red {
+    color: #FFF;
+    background: #DE0000;
+}
+
+.green {
+    background: #C8F8E4;
+    font-weight: 700;
+    color: #1DC37E;
+}
+
+.ghost {
+    border: 1px solid #EBEBEB;
+    color: #3B434E;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+}
+
+.lilac {
+    border: 1px solid #7653FC;
+    color: #7653FC;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 12px;
+}

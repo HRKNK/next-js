@@ -1,7 +1,7 @@
 .button {
     box-sizing: border-box;
     display: inline-block;
-    padding: 10px;
+    padding: 11px;
     cursor: pointer;
     line-height: 14px;
     text-align: center;
