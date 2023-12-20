@@ -5,7 +5,7 @@ import { IButton } from './Button.types';
 const Button = ({children, appearance = 'primary', className, ...props}: IButton): JSX.Element => {
     return (
         // classNames принимает дэфолт стили + условный объект
-        <button className={classNames(styles.button, className, {
+        <button type='button' className={classNames(styles.button, className, {
             [styles.primary]: appearance == 'primary',
             [styles.ghost]: appearance == 'ghost',
         })} 

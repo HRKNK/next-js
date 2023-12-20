@@ -21,8 +21,8 @@ export default function Home() {
 	<main style={{backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignContent:'center', height: '100vh'}}>
 		<div>
 			<Htag tag='h1'>Заголовок 2</Htag>
-			<Button appearance='ghost'>Кнопка</Button>
-			<Button appearance='primary'>Кнопка</Button>
+			<Button appearance='ghost'>Button 1</Button>
+			<Button appearance='primary'>Button 2</Button>
 			{/* <Logo/> */}
 			<Ptag size='m'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ad dicta eaque eveniet</Ptag>
 		</div>
