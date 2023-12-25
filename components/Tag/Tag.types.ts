@@ -2,5 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
 export interface ITag extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     children: ReactNode;
-    filling: 'red' | 'lilac' | 'ghost' | 'green' | 'gray';
+    color: 'red' | 'lilac' | 'ghost' | 'green' | 'gray';
+    href?: string;
+    size: 's' | 'm';
 }

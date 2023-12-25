@@ -1,42 +1,55 @@
 .tag {
     display: inline;
+    box-sizing: border-box;
     border-radius: 20px;
     text-align: center;
-    font-size: 14px;
+    margin-right: 8px;
     font-style: normal;
-    font-weight: 600;
-    line-height: 13px;
-    padding: 5px 8px;
 }
+
+.tag a {
+    text-decoration: none;
+}
+
+.s {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px 10px;
+}
+
+.m {
+    padding: 5px 10px;
+    font-size: 14px;
+    line-height: 14px;
+}
+
 
 .gray {
     color: #FFF;
     background: #B3C0D9;
+    font-weight: bold;
 }
 
 .red {
     color: #FFF;
     background: #DE0000;
+    font-weight: bold;
 }
 
 .green {
-    background: #C8F8E4;
-    font-weight: 700;
     color: #1DC37E;
+    background: #C8F8E4;
+    font-weight: bold;
 }
 
 .ghost {
-    border: 1px solid #EBEBEB;
     color: #3B434E;
-    font-size: 12px;
+    border: 1px solid #EBEBEB;
     font-weight: 500;
-    padding: 5px 12px;
 }
 
 .lilac {
-    border: 1px solid #7653FC;
     color: #7653FC;
-    font-size: 12px;
+    border: 1px solid #7653FC;
     font-weight: 500;
-    padding: 5px 12px;
 }

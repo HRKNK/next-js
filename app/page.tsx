@@ -30,10 +30,10 @@ export default function Home() {
 			{/* <Logo/> */}
 			<Ptag size='m'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ad dicta eaque eveniet</Ptag>
 			<br />
-			<Tag filling='red'>hh.ru</Tag>
-			<Tag filling='green'>-10 000 ₽</Tag>
-			<Tag filling='ghost'>Photoshop</Tag>
-			<Tag filling='lilac'>Web дизайн</Tag>
+			<Tag size='m' color='red'>hh.ru</Tag>
+			<Tag size='m' color='green'>-10 000 ₽</Tag>
+			<Tag size='m' color='ghost'>Photoshop</Tag>
+			<Tag size='m' href='https://github.com/HRKNK' color='lilac'>Web дизайн</Tag>
 		</div>
 	</main>
   )
