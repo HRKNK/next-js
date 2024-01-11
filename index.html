@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- https://htmlacademy.ru/blog/html/semantics по семантике -->
+
+    <header>
+        <h1>Welcome to my website</h1>
+        <p>This is a simple example of semantic HTML</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- article оборачивает независимую часть страницы (например: статья/видео) -->
+        <article>
+            <header>
+                <h2>Article title</h2>
+                <p>Published on <time datetime="2023-12-18">18 Декабрь, 2023</time></p>
+            </header>
+
+            <!-- section оборачивает осмысленную часть страницы -->
+            <section>
+                <p>This is the content of the article</p>
+            </section>
+
+            <footer>
+                <p>Author: Ali Hatsu</p>
+            </footer>
+        </article>
+
+        <article>
+            <hgroup>
+                <h2>Apples</h2>
+                <p>Tasty, delicious fruit!</p>
+            </hgroup>
+            <p>The apple is the pomaceous fruit of the apple tree.</p>
+            <section>
+                <h3>Red Delicious</h3>
+                <p>These bright red apples are the most common found in many supermarkets.</p>
+            </section>
+            <section>
+                <h3>Granny Smith</h3>
+                <p>These juicy, green apples make a great filling for apple pies.</p>
+            </section>
+        </article>
+
+        
+        <!-- Часть страницы, которое косвенно связано с основной (например: боковая панель/бургер) -->
+        <aside>
+            <h2>Related Links</h2>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2023</p>
+    </footer>
+</body>
+</html>
