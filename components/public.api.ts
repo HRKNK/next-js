@@ -8,11 +8,16 @@ import { type IHtag } from './H-tag/Htag.types';
 import Ptag from './P-tag/Ptag';
 import { type IPtag } from './P-tag/Ptag.types';
 
+import Rating from './Rating/Rating';
+import { type IRating } from './Rating/Rating.types';
+
 export {
     Button,
     IButton,
     Htag,
     IHtag,
     Ptag,
-    IPtag
+    IPtag,
+    Rating,
+    IRating,
 }

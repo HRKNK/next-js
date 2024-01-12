@@ -1,3 +1,5 @@
+// Корневой маршрут :host/
+
 import Image from 'next/image'
 import styles from './page.module.css'
 import { Metadata } from 'next/types';
@@ -34,6 +36,7 @@ export default function Home() {
 			<Tag size='m' color='green'>-10 000 ₽</Tag>
 			<Tag size='m' color='ghost'>Photoshop</Tag>
 			<Tag size='m' href='https://github.com/HRKNK' color='lilac'>Web дизайн</Tag>
+			<br />
 		</div>
 	</main>
   )
