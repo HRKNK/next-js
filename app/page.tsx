@@ -6,6 +6,7 @@ import Button from '@/components/Button/Button';
 import Logo from '../public/next.svg';
 import Ptag from '@/components/P-tag/Ptag';
 import Tag from '@/components/Tag/Tag';
+import { Rating } from '@/components/public.api';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
@@ -34,6 +35,8 @@ export default function Home() {
 			<Tag size='m' color='green'>-10 000 ₽</Tag>
 			<Tag size='m' color='ghost'>Photoshop</Tag>
 			<Tag size='m' href='https://github.com/HRKNK' color='lilac'>Web дизайн</Tag>
+			<br />
+			<Rating ></Rating>
 		</div>
 	</main>
   )
