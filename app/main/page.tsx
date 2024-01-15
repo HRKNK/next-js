@@ -5,9 +5,15 @@ import React, { useState } from 'react';
 
 const main = () => {
     const [rating, setRating] = useState<number>(1);
+    const [editable, setEditable] = useState<boolean>(true);
     return (
         <div>
-            <Rating isEditable={true} currentRating={rating} setRating={setRating}></Rating>
+            <Rating 
+                isEditable={editable} 
+                currentRating={rating} 
+                setEditable={setEditable} 
+                setRating={setRating}
+            />
         </div>
     );
 };

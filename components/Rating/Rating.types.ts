@@ -4,4 +4,5 @@ export interface IRating extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement
     isEditable: boolean;
     currentRating: number;
     setRating: Dispatch<SetStateAction<number>>;
+    setEditable: Dispatch<SetStateAction<boolean>>;
 }

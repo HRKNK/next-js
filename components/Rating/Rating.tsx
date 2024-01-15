@@ -7,7 +7,7 @@ import styles from './Rating.module.css';
 import classNames from 'classnames';
 
 
-const Rating = ({isEditable = true, currentRating, setRating, ...props}: IRating) => {
+const Rating = ({isEditable = true, currentRating, setEditable, setRating, ...props}: IRating) => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const Rating = ({isEditable = true, currentRating, setRating, ...props}: IRating
         const updateArray = ratingArray.map((el: JSX.Element, i: number): JSX.Element => {
                 return ( 
                     <Star className={classNames(styles.star, {
-                        [styles.filled]: i < currentRating,
+                        [styles.filled]: i < targetRating,
                         [styles.editable]: isEditable,
                     })}
                     onMouseEnter={() => setViewStars(i+1)}
@@ -35,7 +35,9 @@ const Rating = ({isEditable = true, currentRating, setRating, ...props}: IRating
     };
 
     const onClickRating = (rating: number) => {
-        isEditable && setRating(rating);
+        if(!isEditable) return;
+        setRating(rating);
+        setEditable(!isEditable);
     };
 
     return (
