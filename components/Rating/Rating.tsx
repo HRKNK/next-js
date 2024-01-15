@@ -16,15 +16,18 @@ const Rating = ({isEditable = true, currentRating, setEditable, setRating, ...pr
 
     const createStars = (targetRating: typeof currentRating) => {
         const updateArray = ratingArray.map((el: JSX.Element, i: number): JSX.Element => {
-                return ( 
-                    <Star className={classNames(styles.star, {
-                        [styles.filled]: i < targetRating,
-                        [styles.editable]: isEditable,
-                    })}
-                    onMouseEnter={() => setViewStars(i+1)}
-                    onMouseLeave={() => setViewStars(currentRating)}
-                    onClick={() => onClickRating(targetRating)}
-                    />
+                return (
+                    <span
+                        className={classNames(styles.star, {
+                            [styles.filled]: i < targetRating,
+                            [styles.editable]: isEditable,
+                        })}
+                        onMouseEnter={() => setViewStars(i+1)}
+                        onMouseLeave={() => setViewStars(currentRating)}
+                        onClick={() => onClickRating(targetRating)}
+                    >
+                        <Star tabIndex={isEditable ? 0 : false}/>
+                    </span>
                 );
         });
         setRatingArray(updateArray);
