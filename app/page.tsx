@@ -22,7 +22,7 @@ export async function generateMetadata (): Promise<Metadata> {
 
 export default function Home() {
   return (
-	<main style={{backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignContent:'center', height: '100vh'}}>
+	<main>
 		<div>
 			<br />
 			<Htag tag='h2'>Type title</Htag>
