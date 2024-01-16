@@ -3,7 +3,7 @@
 import { Rating } from '@/components/public.api';
 import React, { useState } from 'react';
 
-const main = () => {
+const Main = () => {
     const [rating, setRating] = useState<number>(1);
     const [editable, setEditable] = useState<boolean>(true);
     return (
@@ -18,4 +18,4 @@ const main = () => {
     );
 };
 
-export default main;
+export default Main;

@@ -2,10 +2,8 @@
 // Сам NEXT
 // npm i next@latest
 
-
 // Типы для Node.js (SSR)
 // npm i -D @types/node
-
 
 // Типизация HTML элементов. 
 // пример для p:
@@ -17,6 +15,6 @@
 // import { ReactNode } from "react";
 // children: ReactNode;
 
-
 // SVG плагин для сборщика/вэбпака (импортируем SVG как компонент)
 // npm i --save-dev @svgr/webpack
+
