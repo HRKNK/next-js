@@ -1,9 +1,9 @@
 // Корневой маршрут :host/
 // page.tsx - зарезервированное имя маршрутизации
 
-import Header from '@/layouts/header/Header';
 import styles from './page.module.css'
 import { Metadata } from 'next/types';
+import Header from '@/layouts/header/Header';
 import Sidebar from '@/layouts/sidebar/Sidebar';
 import Footer from '@/layouts/footer/Footer';
 
@@ -23,7 +23,7 @@ export default function Home() {
 		<Header className={styles.header}/>
 		<Sidebar className={styles.sidebar}/>
 		<div className={styles.body}>
-			
+			{'BODY'}
 		</div>
 		<Footer className={styles.footer}/>
 	</div>

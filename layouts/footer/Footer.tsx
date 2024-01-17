@@ -6,7 +6,7 @@ interface IFooter extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTML
 
 const Footer = (props: IFooter) => {
     return (
-        <div>
+        <div {...props}>
             FOOTER
         </div>
     );

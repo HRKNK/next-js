@@ -4,10 +4,10 @@ interface ISidebar extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTM
     children?: ReactNode;
 };
 
-const Sidebar = (props: ISidebar) => {
+const Sidebar = (props: ISidebar): JSX.Element => {
     return (
-        <div>
-            
+        <div {...props}>
+            SIDEBAR
         </div>
     );
 };

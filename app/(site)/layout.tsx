@@ -28,14 +28,15 @@ export default function RootSiteLayout({children}: {children: React.ReactNode}) 
 		<link rel="icon" href="/favicon.ico" />
 	</Head> */}
     <html lang="en">
-      <body style={{backgroundColor: 'white', width: '55vw', margin: '0 auto', height: '100vh'}} className={noto_sans.className}>
-        <nav>
+      <body>
+        {/* style={{backgroundColor: 'white', width: '55vw', margin: '0 auto', height: '100vh'}} className={noto_sans.className}Z */}
+        {/* <nav>
           <ul>
             <li>Главная</li>
             <li>О нас</li>
             <li>Что-то ещё</li>
           </ul>
-        </nav>
+        </nav> */}
         {children}
       </body>
     </html>

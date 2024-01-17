@@ -6,8 +6,8 @@ interface IHeader extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTML
 
 const Header = (props: IHeader) => {
     return (
-        <div>
-            
+        <div {...props}>
+            HEADER
         </div>
     );
 };
