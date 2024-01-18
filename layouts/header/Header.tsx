@@ -4,7 +4,7 @@ interface IHeader extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTML
     children?: ReactNode;
 };
 
-const Header = (props: IHeader) => {
+const Header = (props: IHeader): JSX.Element => {
     return (
         <div {...props}>
             HEADER

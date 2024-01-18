@@ -28,8 +28,8 @@ export default function RootSiteLayout({children}: {children: React.ReactNode}) 
 		<link rel="icon" href="/favicon.ico" />
 	</Head> */}
     <html lang="en">
-      <body>
-        {/* style={{backgroundColor: 'white', width: '55vw', margin: '0 auto', height: '100vh'}} className={noto_sans.className}Z */}
+      <body className={noto_sans.className}>
+        {/* style={{backgroundColor: 'white', width: '55vw', margin: '0 auto', height: '100vh'}} className={noto_sans.className} */}
         {/* <nav>
           <ul>
             <li>Главная</li>
