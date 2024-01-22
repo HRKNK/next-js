@@ -17,15 +17,28 @@ export async function generateMetadata (): Promise<Metadata> {
   }
 }
 
-export default function Home() {
-  return (
-	<div className={styles.wrapper}>
-		<Header className={styles.header}/>
-		<Sidebar className={styles.sidebar}/>
-		<div className={styles.body}>
-			{'BODY'}
+async function getMenu(firstCategory: number) {
+	const res = await fetch('https://courses-top.ru/api/', {
+		method: 'POST',
+		body: JSON.stringify({
+			firstCategory,
+		}),
+		headers: new Headers({'content-type': 'application/json'}),
+	})
+	return res.json();
+}
+
+export default async function Home() {
+	const menu = await getMenu(0);
+
+	return (
+		<div className={styles.wrapper}>
+			<Header className={styles.header}/>
+			<Sidebar className={styles.sidebar}/>
+			<div className={styles.body}>
+				{JSON.stringify(menu)}
+			</div>
+			<Footer className={styles.footer}/>
 		</div>
-		<Footer className={styles.footer}/>
-	</div>
-  )
+	)
 }
