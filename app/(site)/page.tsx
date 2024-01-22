@@ -6,6 +6,7 @@ import { Metadata } from 'next/types';
 import Header from '@/layouts/header/Header';
 import Sidebar from '@/layouts/sidebar/Sidebar';
 import Footer from '@/layouts/footer/Footer';
+import { MenuItem } from '@/interfaces/IMenu';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
@@ -17,8 +18,9 @@ export async function generateMetadata (): Promise<Metadata> {
   }
 }
 
-async function getMenu(firstCategory: number) {
-	const res = await fetch('https://courses-top.ru/api/', {
+async function getMenu(firstCategory: number): Promise<MenuItem[]> {
+	// переменная окружения process.env
+	const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + 'api/top-page/find', {
 		method: 'POST',
 		body: JSON.stringify({
 			firstCategory,
@@ -34,9 +36,11 @@ export default async function Home() {
 	return (
 		<div className={styles.wrapper}>
 			<Header className={styles.header}/>
-			<Sidebar className={styles.sidebar}/>
+			<Sidebar className={styles.sidebar}>
+				{menu.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )}
+			</Sidebar>
 			<div className={styles.body}>
-				{JSON.stringify(menu)}
+				{'BODY'}
 			</div>
 			<Footer className={styles.footer}/>
 		</div>
