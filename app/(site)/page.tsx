@@ -7,6 +7,7 @@ import Header from '@/layouts/header/Header';
 import Sidebar from '@/layouts/sidebar/Sidebar';
 import Footer from '@/layouts/footer/Footer';
 import { MenuItem } from '@/interfaces/IMenu';
+import { getMenu } from '@/api/page';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
@@ -16,18 +17,6 @@ export async function generateMetadata (): Promise<Metadata> {
 	title: 'My application',
 	icons: './url.ico', // имеет более низкий приоритет перед файловой структурой favicon.ico
   }
-}
-
-async function getMenu(firstCategory: number): Promise<MenuItem[]> {
-	// переменная окружения process.env
-	const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + 'api/top-page/find', {
-		method: 'POST',
-		body: JSON.stringify({
-			firstCategory,
-		}),
-		headers: new Headers({'content-type': 'application/json'}),
-	})
-	return res.json();
 }
 
 export default async function Home() {
