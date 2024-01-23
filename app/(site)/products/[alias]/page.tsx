@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 // генерация (алиаса/динамического адреса) как статической страницы 
 export async function generateStaticParams() {
-    const menu = await getMenu(0);
+    const menu = await getMenu(0);    
     /** /// Список статических страниц
     * @return @types { alias: string }[]
     */ 
