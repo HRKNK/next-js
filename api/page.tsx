@@ -3,7 +3,7 @@ import { MenuItem } from "@/interfaces/IMenu";
 
 // API-запрос + динамический адрес (alias)
 export async function getPage(alias: string) {
-	const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + alias, {
+	const res = await fetch(process.env.NEXT_PUBLIC_DOMAIN + 'api/top-page/byAlias/' + alias, {
         // ревалидация (регенерация через запрос)
         next: { revalidate: 10 },
 		method: 'GET',

@@ -20,11 +20,11 @@ export async function generateStaticParams() {
 
 // получение динамического адреса(алиаса)
 const Team = async ({ params }: {params: {alias: string}}) => {
-    // const page = await getPage(params.alias);
+    const page = await getPage(params.alias);
     // 404
-    // if(!page) {
-    //     notFound();
-    // }
+    if(!page) {
+        notFound();
+    }
 
     return (
         <div>
