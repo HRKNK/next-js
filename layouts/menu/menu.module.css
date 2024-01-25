@@ -1,0 +1,23 @@
+.logo__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    color: #7653FC;
+    font-style: normal;
+    line-height: normal;
+}
+
+.logo__wrapper > h2 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.logo__wrapper > h2 span {
+    font-size: 24px;
+    font-weight: 200;
+}
+
+.logo__wrapper > .logo {
+    fill: #7653FC;
+}

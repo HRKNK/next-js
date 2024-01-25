@@ -7,6 +7,7 @@ import Lens from '@/public/lens.svg';
 
 const Search = ({...props}: ISearch) => {
     const [value, setValue] = useState<string>('');
+    
 
     return (
         <div className={styles.search__wrapper}>
