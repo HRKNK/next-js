@@ -13,8 +13,13 @@
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	background-color: #fff;
 	color: #000;
-	padding: 3px 3px 3px 15px;
+	padding: 1px 1px 1px 13px;
 	border-radius: 5px;
+	border: 2px solid transparent;
+}
+
+.search__wrapper-focus {
+	border: 2px solid #7653FC;
 }
 
 .input__search {

@@ -7,7 +7,7 @@ import './globals.css'
 // import Head from 'next/head'
 
 // подключение шрифта (оптимальная загрузка при ssr) // const noto_sans = Noto_Sans({ weight: '400', subsets: ['cyrillic'] });
-const noto_sans = Noto_Sans({ weight: ['200','400', '500', '600', '700'], subsets: ['cyrillic'] });
+const noto_sans = Noto_Sans({ weight: ['200', '400', '500', '600', '700'], subsets: ['cyrillic'] });
 // подключение:
 // open_sans.className - для классов / open_sans.style - для прямого style
 
