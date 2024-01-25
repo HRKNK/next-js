@@ -10,7 +10,7 @@ import { MenuItem } from '@/interfaces/IMenu';
 import { getMenu } from '@/api/page';
 import AppContextProvider from '@/context/app.context';
 import { TopLevelCategory } from '@/interfaces/IPage';
-import Menu from '@/layouts/menu/Menu';
+import Menu from '@/widgets/menu/Menu';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
