@@ -6,7 +6,7 @@ import styles from './Search.module.css';
 import Lens from '@/public/lens.svg';
 import classNames from 'classnames';
 
-const Search = ({...props}: ISearch): JSX.Element => {
+const Search = ({button, target, ...props}: ISearch): JSX.Element => {
     const [value, setValue] = useState<string>('');
     const [focus, setFocus] = useState<boolean>(false);
 
@@ -19,13 +19,13 @@ const Search = ({...props}: ISearch): JSX.Element => {
                 onBlur={()=> setFocus(false)}
             
                 className={styles.input__search} 
-                placeholder={'Поиск...'} 
+                placeholder={target} 
                 type='text'
                 value={value} 
                 onChange={e => setValue(e.target.value)}
                 {...props}
             />
-            <button className={styles.button__search} type='button'><Lens fill="white"/></button>
+            {button && <button className={styles.button__search} type='button'><Lens fill="white"/></button>}
         </div>
     );
 };

@@ -19,7 +19,7 @@ const Menu = async ({nav_item, children, ...props}: IMenu): Promise<JSX.Element>
                 <h2>OWL<span>top</span></h2>
             </div>
             <div>
-                <Search></Search>
+                <Search button={true} target='Поиск...'></Search>
             </div>
             {nav_item.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )}
         </div>
