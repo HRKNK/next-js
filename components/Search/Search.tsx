@@ -6,12 +6,12 @@ import styles from './Search.module.css';
 import Lens from '@/public/lens.svg';
 import classNames from 'classnames';
 
-const Search = ({button, target, ...props}: ISearch): JSX.Element => {
+const Search = ({button, target, className, ...props}: ISearch): JSX.Element => {
     const [value, setValue] = useState<string>('');
     const [focus, setFocus] = useState<boolean>(false);
 
     return (
-        <div className={classNames(styles.search__wrapper, {
+        <div className={classNames(styles.search__wrapper, className, {
             [styles['search__wrapper-focus']]: focus,
         })}>
             <input

@@ -22,5 +22,7 @@
 }
 
 .logo__wrapper>.logo {
+    position: relative;
+    top: -1.5px;
     fill: #7653FC;
 }

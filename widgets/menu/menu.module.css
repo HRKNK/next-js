@@ -1,0 +1,68 @@
+.menu {
+    display: flex;
+    position: relative;
+    top: 35px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu__search {
+    margin-bottom: 3px;
+}
+
+.menu__nav {
+
+}
+
+.menu__logo {
+    margin-left: 12px;
+}
+
+.nav__menu > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    list-style-type: none;
+}
+
+.nav__item {
+    color: #787D85;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    font-weight: 500;
+}
+
+.nav__item > a {
+    text-decoration: none;
+}
+
+.nav__item > a:visited {
+    color: inherit;
+}
+
+.nav__item:hover > a > span {
+    color: #4010ff;
+    transition: color 1s;
+}
+
+.nav__item:hover > a > svg {
+    fill: #4010ff;
+    transition: fill 1s;
+}
+
+
+.nav__item-selected {
+    color: #7653FC;
+}
+
+.nav__item svg {
+    position: relative;
+    top: 7px;
+    fill: #787D85;
+    margin-right: 20px;
+}
+
+.nav__item-selected svg {
+    fill: #7653FC;
+}
