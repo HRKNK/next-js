@@ -1,7 +1,5 @@
 .menu {
     display: flex;
-    position: relative;
-    top: 35px;
     flex-direction: column;
     gap: 20px;
 }
@@ -11,12 +9,15 @@
 }
 
 .menu__nav {
-
+    margin-bottom: 20px;
 }
 
 .menu__logo {
+    margin-top: 35px;
     margin-left: 12px;
 }
+
+/* Отделить в компонент */
 
 .nav__menu > ul {
     display: flex;
@@ -43,7 +44,7 @@
 
 .nav__item:hover > a > span {
     color: #4010ff;
-    transition: color 1s;
+    transition: color 0.7s;
 }
 
 .nav__item:hover > a > svg {

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { DetailedHTMLProps, HTMLAttributes, ReactNode, useContext } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import style from './menu.module.css';
 import { MenuItem } from '@/interfaces/IMenu';
 import Search from '@/components/Search/Search';
@@ -21,10 +21,10 @@ const Menu = async ({nav_item, children, ...props}: IMenu): Promise<JSX.Element>
             <Logo className={style.menu__logo} naming={true}/>
             <Search className={style.menu__search} button={true} target='Поиск...'></Search>
             {/* {nav_item.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )} */}
-            <nav className={style.nav__menu}>
+            <nav className={classNames(style.nav__menu, style.menu__nav)}>
                 <ul>
-                    <li className={classNames(style.menu__nav, style.nav__item, style['nav__item-selected'])}><a href='#'><Courses/><span>{'Курсы'}</span></a></li>
-                    <li className={classNames(style.nav__item)}><a href='#'><Services/><span>{'Сервисы'}</span></a></li>
+                    <li className={classNames(style.nav__item)}><a href='#'><Courses/><span>{'Курсы'}</span></a></li>
+                    <li className={classNames(style.nav__item, style['nav__item-selected'])}><a href='#'><Services/><span>{'Сервисы'}</span></a></li>
                     <li className={classNames(style.nav__item)}><a href='#'><Books/><span>{'Книги'}</span></a></li>
                     <li className={classNames(style.nav__item)}><a href='#'><Products/><span>{'Товары'}</span></a></li>
                 </ul>

@@ -22,7 +22,15 @@
 }
 
 .body {
+  margin-top: 35px;
   grid-area: body;
+}
+
+.body header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .footer {

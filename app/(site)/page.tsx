@@ -6,11 +6,10 @@ import { Metadata } from 'next/types';
 import Header from '@/layouts/header/Header';
 import Sidebar from '@/layouts/sidebar/Sidebar';
 import Footer from '@/layouts/footer/Footer';
-import { MenuItem } from '@/interfaces/IMenu';
 import { getMenu } from '@/api/page';
-import AppContextProvider from '@/context/app.context';
-import { TopLevelCategory } from '@/interfaces/IPage';
 import Menu from '@/widgets/menu/Menu';
+import { Htag } from '@/components/public.api';
+import Tag from '@/components/Tag/Tag';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
@@ -33,9 +32,13 @@ export default async function Home() {
 					{/* {menu.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )} */}
 					<Menu nav_item={menu}></Menu>
 				</Sidebar>
-				<div className={styles.body}>
+				<main className={styles.body}>
+					<header>
+						<Htag tag='h1'>{'Курсы по Photoshop'}</Htag>
+						<Tag color='gray' size='s'>10</Tag>
+					</header>
 					{'BODY'}
-				</div>
+				</main>
 				<Footer className={styles.footer}/>
 			</div>
 		// </AppContextProvider>
