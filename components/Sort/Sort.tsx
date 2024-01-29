@@ -14,18 +14,16 @@ const Sort = ({className, ...props}: ISort): JSX.Element => {
         <div className={classNames(styles.sort__wrapper, className)} {...props}>
             <button 
                 onClick={() => setSelected('by rating')} 
-                className={classNames(styles.sort__button, {
-                    [styles['sort__button-selected']]: selected === 'by rating',
-                    [styles['sort__button-gray']]: selected !== 'by rating',
-                })} 
+                className={classNames(styles.sort__button, 
+                    selected === 'by rating' ? styles['sort__button-selected']: styles['sort__button-gray'],
+                )} 
                 type="button"
             >{selected === 'by rating' && <SortIcon/>}{'По рейтингу'}</button>
             <button 
                 onClick={() => setSelected('by price')}
-                className={classNames(styles.sort__button, {
-                    [styles['sort__button-selected']]: selected === 'by price',
-                    [styles['sort__button-gray']]: selected !== 'by price',
-                })} 
+                className={classNames(styles.sort__button, 
+                    selected === 'by price' ? styles['sort__button-selected']: styles['sort__button-gray'],    
+                )} 
                 type="button"
             >{selected === 'by price' && <SortIcon/>}{'По цене'}</button>
         </div>
