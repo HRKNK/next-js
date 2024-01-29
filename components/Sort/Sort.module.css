@@ -1,0 +1,29 @@
+.sort__wrapper {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	gap: 0 43px;
+}
+
+.sort__button {
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	font-size: 16px;
+	cursor: pointer;
+	text-align: center;
+	border: none;
+	background-color: transparent;
+}
+
+.sort__button > svg {
+	margin-right: 8px;
+}
+
+.sort__button-selected {
+	color: #7653FC;
+}
+
+.sort__button-gray {
+	color: #787D85;
+}

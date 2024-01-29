@@ -10,6 +10,7 @@ import { getMenu } from '@/api/page';
 import Menu from '@/widgets/menu/Menu';
 import { Htag } from '@/components/public.api';
 import Tag from '@/components/Tag/Tag';
+import Sort from '@/components/Sort/Sort';
 
 // generateMetadata зарезервированное имя
 // вычисляемые метаданные
@@ -36,6 +37,7 @@ export default async function Home() {
 					<header>
 						<Htag tag='h1'>{'Курсы по Photoshop'}</Htag>
 						<Tag color='gray' size='s'>10</Tag>
+						<Sort></Sort>
 					</header>
 					{'BODY'}
 				</main>
