@@ -16,6 +16,11 @@
 	background-color: transparent;
 }
 
+.sort__button:hover {
+	color: #4010ff;
+	transition: color 0.7s;
+}
+
 .sort__button > svg {
 	margin-right: 8px;
 }

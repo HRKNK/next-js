@@ -1,0 +1,7 @@
+User-agent: yandex
+
+disallow: /admin/*
+
+User-agent: googlebot
+
+disallow: /content/*
