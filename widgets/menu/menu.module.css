@@ -38,7 +38,9 @@
     text-decoration: none;
 }
 
-.nav__item > a:visited {
+.nav__item > a:visited, 
+.nav__item > a:active, 
+.nav__item > a:link {
     color: inherit;
 }
 
