@@ -11,6 +11,7 @@ import Products from '@/public/menu/products.svg';
 import Services from '@/public/menu/services.svg';
 import { type FirstLevelMenu } from './Menu.types';
 import { TopLevelCategory } from '@/interfaces/IPage';
+import Link from 'next/link';
 
 interface IMenu extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	children?: ReactNode;
@@ -18,13 +19,28 @@ interface IMenu extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDi
 };
 
 const levelMenu: FirstLevelMenu[] = [
-    { route: 'courses/', name: 'Курсы', icon: <Courses/>, id: TopLevelCategory.Courses },
-    { route: 'services/', name: 'Сервисы', icon: <Services/>, id: TopLevelCategory.Services },
-    { route: 'books/', name: 'Книги', icon: <Books/>, id: TopLevelCategory.Books },
-    { route: 'products/', name: 'Товары', icon: <Products/>, id: TopLevelCategory.Products },
+    { route: '/courses/', name: 'Курсы', icon: <Courses/>, id: TopLevelCategory.Courses },
+    { route: '/services/', name: 'Сервисы', icon: <Services/>, id: TopLevelCategory.Services },
+    { route: '/books/', name: 'Книги', icon: <Books/>, id: TopLevelCategory.Books },
+    { route: '/products/', name: 'Товары', icon: <Products/>, id: TopLevelCategory.Products },
 ]
 
 const Menu = async ({nav_item, children, ...props}: IMenu): Promise<JSX.Element> => {
+
+    const firstLevel = (menu: FirstLevelMenu[]): JSX.Element => {
+        return (
+            <>
+                {menu.map(element => (
+                    <li 
+                        className={classNames(style.nav__item)} 
+                        key={element.id}>
+                            <Link href={element.route}>{element.icon}<span>{element.name}</span></Link>
+                    </li>
+                ))}
+            </>
+        )
+    }
+
     return (
         <div className={style.menu} {...props}>
             <Logo className={style.menu__logo} naming={true}/>
@@ -32,13 +48,7 @@ const Menu = async ({nav_item, children, ...props}: IMenu): Promise<JSX.Element>
             {/* {nav_item.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )} */}
             <nav className={classNames(style.nav__menu, style.menu__nav)}>
                 <ul>
-                    {levelMenu.map(element => (
-                        <li 
-                            className={classNames(style.nav__item)} 
-                            key={element.id}>
-                                <a href={element.route}>{element.icon}<span>{element.name}</span></a>
-                        </li>
-                    ))}
+                    {firstLevel(levelMenu)}
                     {/* <li className={classNames(style.nav__item)}><a href='#'><Courses/><span>{'Курсы'}</span></a></li>
                     <li className={classNames(style.nav__item, style['nav__item-selected'])}><a href='#'><Services/><span>{'Сервисы'}</span></a></li>
                     <li className={classNames(style.nav__item)}><a href='#'><Books/><span>{'Книги'}</span></a></li>
