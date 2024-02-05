@@ -39,7 +39,7 @@ export default async function Home() {
 						<Tag color='gray' size='s'>10</Tag>
 						<Sort></Sort>
 					</header>
-					{'BODY'}
+					{menu.length}
 				</main>
 				<Footer className={styles.footer}/>
 			</div>

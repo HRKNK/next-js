@@ -12,7 +12,7 @@ import Services from '@/public/menu/services.svg';
 import { type FirstLevelMenu } from './Menu.types';
 import { TopLevelCategory } from '@/interfaces/IPage';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+// import { usePathname } from 'next/navigation';
 
 interface IMenu extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	children?: ReactNode;
@@ -28,6 +28,12 @@ const levelMenu: FirstLevelMenu[] = [
 
 const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
 
+    // const router = usePathname();
+    // console.log(router);
+
+    console.log(nav_item[0]._id);
+    
+
     const firstLevel = (menu: FirstLevelMenu[]): JSX.Element => {
         return (
             <>
@@ -42,13 +48,10 @@ const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
         )
     }
 
-    // const router = useRouter();
-
     return (
         <div className={style.menu} {...props}>
             <Logo className={style.menu__logo} naming={true}/>
             <Search className={style.menu__search} button={true} target='Поиск...'></Search>
-            {/* {nav_item.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )} */}
             <nav className={classNames(style.nav__menu, style.menu__nav)}>
                 <ul>
                     {firstLevel(levelMenu)}
@@ -56,6 +59,7 @@ const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
                     <li className={classNames(style.nav__item, style['nav__item-selected'])}><a href='#'><Services/><span>{'Сервисы'}</span></a></li>
                     <li className={classNames(style.nav__item)}><a href='#'><Books/><span>{'Книги'}</span></a></li>
                     <li className={classNames(style.nav__item)}><a href='#'><Products/><span>{'Товары'}</span></a></li> */}
+                    {children}
                 </ul>
             </nav>
         </div>

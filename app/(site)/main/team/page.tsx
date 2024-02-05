@@ -4,6 +4,7 @@ import React from 'react';
 
 // вложенный team имеет общий с main layout (рендерится только компонент маршрутизации)
 const Team = async () => {
+    
     {/* имитация лоадинга */}
     const delay = await requestDelay(2000);
     

@@ -1,3 +1,5 @@
+import { TopLevelCategory } from "./IPage"
+
 export interface MenuItem {
   _id: {
     secondCategory: string
@@ -9,5 +11,5 @@ export interface PageItem {
   alias: string
   title: string
   _id: string
-  category: string
+  category: TopLevelCategory
 }
