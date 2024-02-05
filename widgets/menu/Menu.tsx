@@ -12,6 +12,7 @@ import Services from '@/public/menu/services.svg';
 import { type FirstLevelMenu } from './Menu.types';
 import { TopLevelCategory } from '@/interfaces/IPage';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 interface IMenu extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	children?: ReactNode;
@@ -25,7 +26,7 @@ const levelMenu: FirstLevelMenu[] = [
     { route: '/products/', name: 'Товары', icon: <Products/>, id: TopLevelCategory.Products },
 ]
 
-const Menu = async ({nav_item, children, ...props}: IMenu): Promise<JSX.Element> => {
+const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
 
     const firstLevel = (menu: FirstLevelMenu[]): JSX.Element => {
         return (
@@ -40,6 +41,8 @@ const Menu = async ({nav_item, children, ...props}: IMenu): Promise<JSX.Element>
             </>
         )
     }
+
+    // const router = useRouter();
 
     return (
         <div className={style.menu} {...props}>

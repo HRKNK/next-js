@@ -1,7 +1,8 @@
+"use client"
 
 // Зарезервированное имя заглушки "Загрузки данных"
 
-const Loading = () => {
+const Loading = (): JSX.Element => {
     return (
         <div>
             Загрузка...

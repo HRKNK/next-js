@@ -24,3 +24,12 @@ export async function getMenu(firstCategory: number): Promise<MenuItem[]> {
 	})
 	return res.json();
 }
+
+export async function requestDelay(delay: number): Promise<any> {
+	const res = new Promise((response, reject) => {
+		setTimeout(() => response(true), delay);
+	});
+
+	let result = await res;
+	return result;
+}
