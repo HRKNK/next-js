@@ -53,7 +53,7 @@ export default async function RootSiteLayout({children}: {children: React.ReactN
 				<Tag color='gray' size='s'>10</Tag>
 				<Sort></Sort>
 				</header>
-				{menu.length}
+
 				{children}
 			</main>
 			<Footer className={styles.footer}/>

@@ -76,11 +76,11 @@
 .nav__item--secondLevel {
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 5px;
     color: #787D85;
-    margin-left: 12px;
+    margin-left: 11px;
 
-    padding: 8px 32px;
+    padding: 5px 32px;
     border-left: 2px solid #DFDFDF;;
 }
 
@@ -90,6 +90,6 @@
 
 .nav__item--secondLevel > li > a {
     font-size: 12px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 16px;
 }
