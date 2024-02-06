@@ -23,26 +23,11 @@ export async function generateMetadata (): Promise<Metadata> {
 }
 
 export default async function Home() {
-	const menu = await getMenu(0);
-
 	return (
 		// <AppContextProvider menu={menu} firstCategory={TopLevelCategory.Courses}>
-			<div className={styles.wrapper}>
-				<Header className={styles.header}/>
-				<Sidebar className={styles.sidebar}>
-					{/* {menu.map(i => (<li key={i._id.secondCategory}>{i._id.secondCategory}</li>) )} */}
-					<Menu nav_item={menu}></Menu>
-				</Sidebar>
-				<main className={styles.body}>
-					<header>
-						<Htag tag='h1'>{'Курсы по Photoshop'}</Htag>
-						<Tag color='gray' size='s'>10</Tag>
-						<Sort></Sort>
-					</header>
-					{menu.length}
-				</main>
-				<Footer className={styles.footer}/>
-			</div>
+		<div>
+			{"Это главная страница"}
+		</div>
 		// </AppContextProvider>
 	)
 }
