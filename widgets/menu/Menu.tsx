@@ -3,7 +3,7 @@
 import classNames from 'classnames';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import style from './menu.module.css';
-import { MenuItem } from '@/interfaces/IMenu';
+import { MenuItem, PageItem } from '@/interfaces/IMenu';
 import Search from '@/components/Search/Search';
 import Logo from '@/components/Logo/Logo';
 
@@ -42,7 +42,8 @@ const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
                             })} 
                             key={element.id}>
                                 <Link href={element.route}>{element.icon}<span>{element.name}</span></Link>
-                                <div>{secondLevel(element.route)}</div>
+
+                                {router == `/${element.route.split('/')[1]}` && <ul className={style['nav__item--secondLevel']}>{secondLevel(element)}</ul>}
                         </li>
                     )
                 })}
@@ -50,25 +51,31 @@ const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
         )
     };
 
-    const secondLevel = (targetRoute: string): JSX.Element => {
-        console.log(targetRoute);
-        
+    const secondLevel = (router: FirstLevelMenu): JSX.Element => {
         return (
             <>
-                {/* {nav_item.map(element => {                    
+                {nav_item.map(element => {                    
                     return (
-                        <li>
-                            <p>{element._id.secondCategory}</p>
+                        <li key={element._id.secondCategory}>
+                            <a href=''>{element._id.secondCategory.toUpperCase()}</a>
+                            {/* <ul>{thirdLevel(element.pages, router.route)}</ul> */}
                         </li>
                     )
-                })} */}
+                
+                })}
             </>
         )
 
     };
 
-    const thirdLevel = (): JSX.Element => {
-        return <></>
+    const thirdLevel = (pages: PageItem[], route: string): JSX.Element => {
+        return (
+            <li>
+                {pages.map(p => {
+                    return <a href={`/${route}/${p.alias}`}>{p.category}</a>
+                })}
+            </li>
+        )
     };
 
     return (
@@ -78,10 +85,6 @@ const Menu = ({nav_item, children, ...props}: IMenu): JSX.Element => {
             <nav className={classNames(style.nav__menu, style.menu__nav)}>
                 <ul>
                     {firstLevel(levelMenu)}
-                    {/* <li className={classNames(style.nav__item)}><a href='#'><Courses/><span>{'Курсы'}</span></a></li>
-                    <li className={classNames(style.nav__item, style['nav__item-selected'])}><a href='#'><Services/><span>{'Сервисы'}</span></a></li>
-                    <li className={classNames(style.nav__item)}><a href='#'><Books/><span>{'Книги'}</span></a></li>
-                    <li className={classNames(style.nav__item)}><a href='#'><Products/><span>{'Товары'}</span></a></li> */}
                 </ul>
             </nav>
         </div>
