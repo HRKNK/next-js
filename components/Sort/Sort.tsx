@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { ISort } from './Sort.types';
+import { ISort, sortEnum } from './Sort.types';
 import styles from './Sort.module.css';
 import classNames from 'classnames';
 
 import SortIcon from '@/public/sort.svg'
 
 const Sort = ({sort, setSort, className, ...props}: ISort): JSX.Element => {
-    const [selected, setSelected] = useState<string>(sort);
+    const [selected, setSelected] = useState<sortEnum>(sort);
 
     return (
         <div className={classNames(styles.sort__wrapper, className)} {...props}>

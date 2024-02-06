@@ -36,6 +36,12 @@ export const metadata: Metadata = {
 	</Head> */}
 
 export default async function RootSiteLayout({children}: {children: React.ReactNode}) {
+
+	const fun = async () => {
+		'use server'
+		console.log('server');
+	}
+
 	const menu = await getMenu(0);
 	return (
 		<html lang="en">
@@ -51,7 +57,7 @@ export default async function RootSiteLayout({children}: {children: React.ReactN
 				<header>
 				<Htag tag='h1'>{'Курсы по Photoshop'}</Htag>
 				<Tag color='gray' size='s'>10</Tag>
-				<Sort sort='price'></Sort>
+				<Sort setSort={fun} sort='price'></Sort>
 				</header>
 
 				{children}
