@@ -51,7 +51,7 @@ export default async function RootSiteLayout({children}: {children: React.ReactN
 				<header>
 				<Htag tag='h1'>{'Курсы по Photoshop'}</Htag>
 				<Tag color='gray' size='s'>10</Tag>
-				<Sort></Sort>
+				<Sort sort='price'></Sort>
 				</header>
 
 				{children}

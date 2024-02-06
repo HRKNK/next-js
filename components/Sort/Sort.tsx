@@ -7,25 +7,25 @@ import classNames from 'classnames';
 
 import SortIcon from '@/public/sort.svg'
 
-const Sort = ({className, ...props}: ISort): JSX.Element => {
-    const [selected, setSelected] = useState<string>('by rating');
+const Sort = ({sort, setSort, className, ...props}: ISort): JSX.Element => {
+    const [selected, setSelected] = useState<string>(sort);
 
     return (
         <div className={classNames(styles.sort__wrapper, className)} {...props}>
             <button 
-                onClick={() => setSelected('by rating')} 
+                onClick={() => setSelected('rating')} 
                 className={classNames(styles.sort__button, 
-                    selected === 'by rating' ? styles['sort__button-selected']: styles['sort__button-gray'],
+                    selected === 'rating' ? styles['sort__button-selected']: styles['sort__button-gray'],
                 )} 
                 type="button"
-            >{selected === 'by rating' && <SortIcon/>}{'По рейтингу'}</button>
+            >{selected === 'rating' && <SortIcon/>}{'По рейтингу'}</button>
             <button 
-                onClick={() => setSelected('by price')}
+                onClick={() => setSelected('price')}
                 className={classNames(styles.sort__button, 
-                    selected === 'by price' ? styles['sort__button-selected']: styles['sort__button-gray'],    
+                    selected === 'price' ? styles['sort__button-selected']: styles['sort__button-gray'],    
                 )} 
                 type="button"
-            >{selected === 'by price' && <SortIcon/>}{'По цене'}</button>
+            >{selected === 'price' && <SortIcon/>}{'По цене'}</button>
         </div>
     );
 };
