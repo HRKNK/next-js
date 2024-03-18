@@ -2,11 +2,12 @@ NEXT14@ (App Router) - иначе устаревший метод - Pages Router
 
 - Установка NEXT (каталог не должен содержать Upper Case)
     // npm i next@latest
+    // rm -R .next - чистка кэша
 
 - Типы для node.js (SSR)
     // npm i -D @types/node
 
-- Типизация HTML элементов. 
+- Типизация HTML элементов (типизация React-компонента). 
     // пример для p:
         // interface I extends DetailedHTMLProps <HTMLAttributes <HTMLParagraphElement>, HTMLParagraphElement> { }
         // Дженерик на месте HTMLAttributes определяет специальные свойства тега.
@@ -19,16 +20,23 @@ NEXT14@ (App Router) - иначе устаревший метод - Pages Router
     // npm i --save-dev @svgr/webpack
 
 APP Router:
-    Имеет 7-мь зарезервированных наименований (favicon.ico, page.tsx, layout.tsx, template.tsx);
+    Имеет 7-мь зарезервированных наименований (favicon.ico, page.tsx, layout.tsx, template.tsx, robots.txt);
     Навигация реализована через вложенность папок/структуру папок:
-        - page.tsx - корневой компонент указанной навигации.
-        - layout.tsx - обертка для page под конфигурацию базовых значений.
+        - page.tsx - компонент УКАЗАННОЙ НАВИГАЦИИ.
+        - layout.tsx - обертка для page.tsx под конфигурацию базовых значений (корневой компонент).
+        - globalError.tsx - глобальный обработчик ошибок, кладется в корневой "src/app"
+
+    Логическая организация/группировка папок осуществляется созданием каталога обернутого в () скобки, пример: (main) 
+            (не влияет на маршрутизацию)
+    
 
 META Data:
     Метаданные имеют самый низкий приоритет и позволяют себя переопределять на уровне страниц.
     // const metadata: Metadata - статичная форма объявления
         - Так же имеет merge эффект (объединение объектов с метаданными с других страниц)
         - const metadata: Metadata - не работает с 'use client';
+        - файловые мета-данные вроде favicon.ico - имеют более низкий приоритет (рекомендуется использовать файловую) 
+                                                   чем функциональные icons: "./url.ico",
 
     Вычисляемые метаданные (или мета-данные подгруженные по запросу) - динамическая форма объявления
         export async function generateMetadata(): Promise<Metadata> { // generateMetadata зарезервированное имя
@@ -36,10 +44,19 @@ META Data:
         // const fetch = await fetch('host', GET)
             return {
                 title: "My application",
-                icons: "./url.ico", // имеет более низкий приоритет перед файловой структурой favicon.ico
+                icons: "./url.ico", // имеет более низкий приоритет маршрутизации
                 openGraph: {
-                description: "OG",
+                    description: "OG",
                 },
                 // вставляем результат запроса ...fetch
             };
         }
+
+FONT: 
+    - Подключение шрифта (оптимальная загрузка при ssr) 
+        // open_sans.className - для классов / open_sans.style - для инлайн стилей
+
+    const noto_sans = Noto_Sans({
+        weight: ["200", "400", "500", "600", "700"],
+        subsets: ["cyrillic"],
+    });
