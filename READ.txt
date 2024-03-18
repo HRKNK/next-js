@@ -1,20 +1,45 @@
+NEXT14@ (App Router) - иначе устаревший метод - Pages Router
 
-// Сам NEXT
-// npm i next@latest
+- Установка NEXT (каталог не должен содержать Upper Case)
+    // npm i next@latest
 
-// Типы для Node.js (SSR)
-// npm i -D @types/node
+- Типы для node.js (SSR)
+    // npm i -D @types/node
 
-// Типизация HTML элементов. 
-// пример для p:
-// interface I extends DetailedHTMLProps <HTMLAttributes <HTMLParagraphElement>, HTMLParagraphElement>
-// дженерик на месте HTMLAttributes определяет специальные свойства тега.
+- Типизация HTML элементов. 
+    // пример для p:
+        // interface I extends DetailedHTMLProps <HTMLAttributes <HTMLParagraphElement>, HTMLParagraphElement> { }
+        // Дженерик на месте HTMLAttributes определяет специальные свойства тега.
 
+- Типизация REACT.children
+    // import { ReactNode } from "react";
+    // children: ReactNode;
 
-// Типизация REACT.children
-// import { ReactNode } from "react";
-// children: ReactNode;
+- SVG плагин для сборщика/вэбпака (импортируем SVG как компонент)
+    // npm i --save-dev @svgr/webpack
 
-// SVG плагин для сборщика/вэбпака (импортируем SVG как компонент)
-// npm i --save-dev @svgr/webpack
+APP Router:
+    Имеет 7-мь зарезервированных наименований (favicon.ico, page.tsx, layout.tsx, template.tsx);
+    Навигация реализована через вложенность папок/структуру папок:
+        - page.tsx - корневой компонент указанной навигации.
+        - layout.tsx - обертка для page под конфигурацию базовых значений.
 
+META Data:
+    Метаданные имеют самый низкий приоритет и позволяют себя переопределять на уровне страниц.
+    // const metadata: Metadata - статичная форма объявления
+        - Так же имеет merge эффект (объединение объектов с метаданными с других страниц)
+        - const metadata: Metadata - не работает с 'use client';
+
+    Вычисляемые метаданные (или мета-данные подгруженные по запросу) - динамическая форма объявления
+        export async function generateMetadata(): Promise<Metadata> { // generateMetadata зарезервированное имя
+        // Делаем fetch-запрос (аки асинхрон):
+        // const fetch = await fetch('host', GET)
+            return {
+                title: "My application",
+                icons: "./url.ico", // имеет более низкий приоритет перед файловой структурой favicon.ico
+                openGraph: {
+                description: "OG",
+                },
+                // вставляем результат запроса ...fetch
+            };
+        }
