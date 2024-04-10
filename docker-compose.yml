@@ -1,0 +1,8 @@
+version: "3"
+services:
+  app:
+    image: next-app:latest
+    container_name: next-app:latest
+    restart: always
+    ports:
+      - 3000:3000

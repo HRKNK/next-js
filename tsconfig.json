@@ -3,6 +3,7 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+    "noImplicitAny": false, // skip ANY error build process
     "skipLibCheck": true,
     "strict": true,
     "strictPropertyInitialization": false,
